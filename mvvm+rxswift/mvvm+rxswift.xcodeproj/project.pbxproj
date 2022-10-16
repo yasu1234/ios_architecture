@@ -12,13 +12,14 @@
 		CE30AAD4F53987CE1970B237 /* Pods_mvvm_rxswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07986821643E474CE248C2CE /* Pods_mvvm_rxswift.framework */; };
 		D2A3544528FAD5E500F5786A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3544428FAD5E500F5786A /* AppDelegate.swift */; };
 		D2A3544728FAD5E500F5786A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3544628FAD5E500F5786A /* SceneDelegate.swift */; };
-		D2A3544928FAD5E500F5786A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3544828FAD5E500F5786A /* ViewController.swift */; };
 		D2A3544C28FAD5E500F5786A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A3544A28FAD5E500F5786A /* Main.storyboard */; };
 		D2A3544E28FAD5E700F5786A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2A3544D28FAD5E700F5786A /* Assets.xcassets */; };
 		D2A3545128FAD5E700F5786A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2A3544F28FAD5E700F5786A /* LaunchScreen.storyboard */; };
 		D2A3545C28FAD5E700F5786A /* mvvm_rxswiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3545B28FAD5E700F5786A /* mvvm_rxswiftTests.swift */; };
 		D2A3546628FAD5E700F5786A /* mvvm_rxswiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3546528FAD5E700F5786A /* mvvm_rxswiftUITests.swift */; };
 		D2A3546828FAD5E700F5786A /* mvvm_rxswiftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3546728FAD5E700F5786A /* mvvm_rxswiftUITestsLaunchTests.swift */; };
+		D2A3547528FAEB4300F5786A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3547428FAEB4300F5786A /* LoginViewController.swift */; };
+		D2A3547728FAEBD000F5786A /* loginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A3547628FAEBD000F5786A /* loginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,6 @@
 		D2A3544128FAD5E500F5786A /* mvvm+rxswift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm+rxswift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A3544428FAD5E500F5786A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2A3544628FAD5E500F5786A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D2A3544828FAD5E500F5786A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2A3544B28FAD5E500F5786A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2A3544D28FAD5E700F5786A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2A3545028FAD5E700F5786A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +60,8 @@
 		D2A3546128FAD5E700F5786A /* mvvm+rxswiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mvvm+rxswiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A3546528FAD5E700F5786A /* mvvm_rxswiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_rxswiftUITests.swift; sourceTree = "<group>"; };
 		D2A3546728FAD5E700F5786A /* mvvm_rxswiftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_rxswiftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2A3547428FAEB4300F5786A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D2A3547628FAEBD000F5786A /* loginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewModel.swift; sourceTree = "<group>"; };
 		D6A7F4C36166E1DD519964EB /* Pods-mvvm+rxswift-mvvm+rxswiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mvvm+rxswift-mvvm+rxswiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-mvvm+rxswift-mvvm+rxswiftUITests/Pods-mvvm+rxswift-mvvm+rxswiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,11 +130,12 @@
 			children = (
 				D2A3544428FAD5E500F5786A /* AppDelegate.swift */,
 				D2A3544628FAD5E500F5786A /* SceneDelegate.swift */,
-				D2A3544828FAD5E500F5786A /* ViewController.swift */,
 				D2A3544A28FAD5E500F5786A /* Main.storyboard */,
 				D2A3544D28FAD5E700F5786A /* Assets.xcassets */,
 				D2A3544F28FAD5E700F5786A /* LaunchScreen.storyboard */,
 				D2A3545228FAD5E700F5786A /* Info.plist */,
+				D2A3547428FAEB4300F5786A /* LoginViewController.swift */,
+				D2A3547628FAEBD000F5786A /* loginViewModel.swift */,
 			);
 			path = "mvvm+rxswift";
 			sourceTree = "<group>";
@@ -164,7 +167,6 @@
 				A6250ED7F0CB28608C73D2BE /* Pods-mvvm+rxswiftTests.debug.xcconfig */,
 				C97220723D9631A8F682DECB /* Pods-mvvm+rxswiftTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -407,7 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2A3544928FAD5E500F5786A /* ViewController.swift in Sources */,
+				D2A3547728FAEBD000F5786A /* loginViewModel.swift in Sources */,
+				D2A3547528FAEB4300F5786A /* LoginViewController.swift in Sources */,
 				D2A3544528FAD5E500F5786A /* AppDelegate.swift in Sources */,
 				D2A3544728FAD5E500F5786A /* SceneDelegate.swift in Sources */,
 			);
