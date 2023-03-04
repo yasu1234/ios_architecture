@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (5.0.5)
+  - AlamofireNetworkActivityLogger (3.0.0):
+    - Alamofire (~> 5.0.0-rc.2)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -7,20 +10,26 @@ PODS:
   - RxSwift (5.1.1)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireNetworkActivityLogger
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AlamofireNetworkActivityLogger
     - RxCocoa
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  AlamofireNetworkActivityLogger: 94e8a7d454a4a9800cef1d0c1d3699754493684b
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 9537479c92a16b44a0078515080f44b7f7789ded
+PODFILE CHECKSUM: 7b27817aadf279efdc1e0948e5e8100419f07a7e
 
 COCOAPODS: 1.11.3
