@@ -6,10 +6,13 @@ target 'mvvm+rxswift' do
   use_frameworks!
 
   pod 'Alamofire'
+  pod 'RxAlamofire'
   pod 'AlamofireNetworkActivityLogger'
   pod 'RxSwift'
+  pod 'AlamofireObjectMapper', :git => 'https://github.com/RomanPodymov/AlamofireObjectMapper.git', :branch => 'master'
   pod 'RxCocoa'
-
+  pod 'ObjectMapper'
+ 
   target 'mvvm+rxswiftTests' do
     inherit! :search_paths
     # Pods for testing
@@ -18,5 +21,13 @@ target 'mvvm+rxswift' do
   target 'mvvm+rxswiftUITests' do
     # Pods for testing
   end
+end
 
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+    end
+  end
 end

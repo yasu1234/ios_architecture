@@ -1,17 +1,29 @@
 PODS:
-  - Alamofire (5.0.5)
-  - AlamofireNetworkActivityLogger (3.0.0):
-    - Alamofire (~> 5.0.0-rc.2)
-  - RxCocoa (5.1.1):
-    - RxRelay (~> 5)
-    - RxSwift (~> 5)
-  - RxRelay (5.1.1):
-    - RxSwift (~> 5)
-  - RxSwift (5.1.1)
+  - Alamofire (5.4.4)
+  - AlamofireNetworkActivityLogger (3.4.0):
+    - Alamofire (~> 5.4.0)
+  - AlamofireObjectMapper (6.3.0):
+    - Alamofire (~> 5.2)
+    - ObjectMapper (~> 4.2)
+  - ObjectMapper (4.2.0)
+  - RxAlamofire (6.1.1):
+    - RxAlamofire/Core (= 6.1.1)
+  - RxAlamofire/Core (6.1.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 6.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
 
 DEPENDENCIES:
   - Alamofire
   - AlamofireNetworkActivityLogger
+  - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `master`)
+  - ObjectMapper
+  - RxAlamofire
   - RxCocoa
   - RxSwift
 
@@ -19,17 +31,32 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireNetworkActivityLogger
+    - ObjectMapper
+    - RxAlamofire
     - RxCocoa
     - RxRelay
     - RxSwift
 
-SPEC CHECKSUMS:
-  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
-  AlamofireNetworkActivityLogger: 94e8a7d454a4a9800cef1d0c1d3699754493684b
-  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
-  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
-  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+EXTERNAL SOURCES:
+  AlamofireObjectMapper:
+    :branch: master
+    :git: https://github.com/RomanPodymov/AlamofireObjectMapper.git
 
-PODFILE CHECKSUM: 7b27817aadf279efdc1e0948e5e8100419f07a7e
+CHECKOUT OPTIONS:
+  AlamofireObjectMapper:
+    :commit: cf723ca766b6fbfd95b019c54ef52cf034e143a5
+    :git: https://github.com/RomanPodymov/AlamofireObjectMapper.git
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  AlamofireNetworkActivityLogger: 162ab8aee00e6267a4304d7cc134e13ccfe3bcc5
+  AlamofireObjectMapper: abe058eaad24646e52bd6122f232020284cfd46a
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+
+PODFILE CHECKSUM: a1b127643161b6b77b06f71d0cf716c6f9b8fa06
 
 COCOAPODS: 1.11.3
