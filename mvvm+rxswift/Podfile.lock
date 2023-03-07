@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.4.4)
+  - AlamofireImage (4.2.0):
+    - Alamofire (~> 5.4)
   - AlamofireNetworkActivityLogger (3.4.0):
     - Alamofire (~> 5.4.0)
   - AlamofireObjectMapper (6.3.0):
@@ -20,6 +22,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - AlamofireNetworkActivityLogger
   - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `master`)
   - ObjectMapper
@@ -30,6 +33,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireImage
     - AlamofireNetworkActivityLogger
     - ObjectMapper
     - RxAlamofire
@@ -49,6 +53,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   AlamofireNetworkActivityLogger: 162ab8aee00e6267a4304d7cc134e13ccfe3bcc5
   AlamofireObjectMapper: abe058eaad24646e52bd6122f232020284cfd46a
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
@@ -57,6 +62,6 @@ SPEC CHECKSUMS:
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
 
-PODFILE CHECKSUM: a1b127643161b6b77b06f71d0cf716c6f9b8fa06
+PODFILE CHECKSUM: cac703d32fdc3f59d7a95bfe987495afa0a9492e
 
 COCOAPODS: 1.11.3

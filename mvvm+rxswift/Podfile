@@ -12,6 +12,7 @@ target 'mvvm+rxswift' do
   pod 'AlamofireObjectMapper', :git => 'https://github.com/RomanPodymov/AlamofireObjectMapper.git', :branch => 'master'
   pod 'RxCocoa'
   pod 'ObjectMapper'
+  pod 'AlamofireImage'
  
   target 'mvvm+rxswiftTests' do
     inherit! :search_paths

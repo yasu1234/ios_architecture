@@ -1,3 +1,5 @@
+import Alamofire
+import AlamofireImage
 import RxSwift
 import RxCocoa
 
@@ -7,6 +9,9 @@ protocol UserViewModelInputs: AnyObject {
 
 protocol UserViewModelOutputs: AnyObject {
     var user: BehaviorRelay<User> { get }
+    var userName: BehaviorRelay<String> { get }
+    var isShowProfileImage: BehaviorRelay<Bool> { get }
+    var profileImage: BehaviorRelay<UIImage> { get }
 }
 
 protocol UserViewModelType: AnyObject {
@@ -21,6 +26,9 @@ class UserViewModel: UserViewModelType,
     var outputs: UserViewModelOutputs { return self }
     
     var user = BehaviorRelay<User>(value: User())
+    var userName = BehaviorRelay<String>(value: "")
+    var isShowProfileImage = BehaviorRelay<Bool>(value: false)
+    var profileImage = BehaviorRelay<UIImage>(value: UIImage())
     
     private var userRequest: UserRequest?
     
@@ -44,6 +52,16 @@ class UserViewModel: UserViewModelType,
             }.subscribe(
                 onNext: { value in
                     self.user.accept(value)
+                    self.userName.accept(value.name ?? "")
+                    self.isShowProfileImage.accept(value.imageUrl == nil || value.imageUrl!.isEmpty)
+                    
+                    if let url = value.imageUrl {
+                        AF.request(url, method: .get).responseImage { response in
+                            if let image = response.value {
+                                self.profileImage.accept(image)
+                            }
+                        }
+                    }
                 },
                 onError: { error in
                     print(error)

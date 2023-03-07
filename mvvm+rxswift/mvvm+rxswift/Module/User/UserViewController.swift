@@ -2,6 +2,9 @@ import RxSwift
 import UIKit
 
 class UserViewController: UIViewController {
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var userImageView: UIImageView!
+    
     private let disposeBag = DisposeBag()
     private let viewModel = UserViewModel()
     
@@ -21,9 +24,27 @@ extension UserViewController {
     
     private func setupBind() {
         viewModel.outputs.user
+            .subscribe(onNext: { user in
+                self.user = user
+            }).disposed(by: disposeBag)
+        
+        // if you want to present/push viewController, use this
+        viewModel.outputs.user
             .bind(to: Binder(self) { controller, user in
                 self.user = user
             }).disposed(by: disposeBag)
+        
+        viewModel.outputs.userName
+            .bind(to: nameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.isShowProfileImage
+            .bind(to: userImageView.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.profileImage
+            .bind(to: userImageView.rx.image)
+            .disposed(by: disposeBag)
         
         setupInput()
     }
