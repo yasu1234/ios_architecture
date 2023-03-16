@@ -64,7 +64,12 @@ class UserViewModel: UserViewModelType,
                     }
                 },
                 onError: { error in
-                    print(error)
+                    switch error {
+                    case APIError.error(let message, let type):
+                        print(message)
+                    default:
+                        print("Error")
+                    }
                 },
                 onCompleted: nil,
                 onDisposed: nil)

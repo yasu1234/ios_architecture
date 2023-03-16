@@ -2,7 +2,7 @@ import Alamofire
 
 final class AuthenticationHandler {
     enum APIErrorResponseCode: Int, CaseIterable {
-        case authorizationFailed = 401
+        case retryRequired = 402
         case headerLacking = 403
     }
     private let retryCount = 4
@@ -53,9 +53,11 @@ extension AuthenticationHandler: RequestInterceptor {
         isRefreshing = true
         
         switch responseCode {
-        case .authorizationFailed, .headerLacking:
+        case .retryRequired:
             isRefreshing = false
             completion(.retry)
+        case .headerLacking:
+            completion(.doNotRetry)
         }
     }
 }
