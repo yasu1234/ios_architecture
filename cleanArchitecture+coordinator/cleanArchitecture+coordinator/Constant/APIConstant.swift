@@ -4,6 +4,7 @@ import Alamofire
 struct APIConstant {
     enum Route: String {
         case authenticatedUser = "/authenticated_user"
+        case app = "/app"
     }
     
     static var host: String {
@@ -18,4 +19,3 @@ struct APIConstant {
         return params
     }
 }
-

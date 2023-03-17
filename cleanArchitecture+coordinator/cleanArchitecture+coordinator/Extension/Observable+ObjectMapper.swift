@@ -23,6 +23,13 @@ extension ObservableType where Element == (HTTPURLResponse, Any) {
         return self.flatMapLatest { _, json -> Observable<T> in
             let tmpObject: T?
             let mapper = self.mapper(type, from: json, keyPath: keyPath, context: context)
+            let error = Mapper<ErrorObject>().map(JSONObject: mapper.object)
+            if let error = error,
+               let message = error.message,
+               let type = error.type {
+                return .error(APIError.error(message: message, type: type))
+            }
+            
             if let object = object {
                 tmpObject = mapper.mapper.map(JSONObject: mapper.object, toObject: object)
             } else {
