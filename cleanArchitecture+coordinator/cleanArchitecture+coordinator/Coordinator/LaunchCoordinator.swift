@@ -6,6 +6,8 @@ class LaunchCoordinator: Coordinator {
     
     private var launchUseCase: LaunchUseCase!
     
+    private var userCoordinator: UserCoordinator?
+    
     init(window: UIWindow) {
         self.window = window
     }
@@ -32,6 +34,9 @@ class LaunchCoordinator: Coordinator {
 
 extension LaunchCoordinator: LaunchViewControllerTransitionDelegate {
     func canAppLaunch() {
+        let coordinator = UserCoordinator(window: window)
+        userCoordinator = coordinator
         
+        coordinator.start()
     }
 }
